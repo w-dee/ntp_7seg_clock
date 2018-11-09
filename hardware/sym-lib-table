@@ -1,0 +1,3 @@
+(sym_lib_table
+  (lib (name DeeComponents)(type Legacy)(uri /workspace/kicad/my-kicad-library/components/DeeComponents.lib)(options "")(descr ""))
+)
