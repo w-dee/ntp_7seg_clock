@@ -17,16 +17,16 @@ $EndDescr
 $Comp
 L DeeComponents:JW5150A U2
 U 1 1 5BE6D385
-P 4300 1200
-F 0 "U2" H 4300 1667 50  0000 C CNN
-F 1 "JW5150A" H 4300 1576 50  0000 C CNN
-F 2 "Housings_SOIC:HTSOP-8-1EP_3.9x4.9mm_Pitch1.27mm" H 4350 850 50  0001 L CIN
-F 3 "" H 4300 1200 50  0001 C CNN
-	1    4300 1200
+P 4000 3200
+F 0 "U2" H 4000 3667 50  0000 C CNN
+F 1 "JW5150A" H 4000 3576 50  0000 C CNN
+F 2 "Housings_SOIC:HTSOP-8-1EP_3.9x4.9mm_Pitch1.27mm" H 4050 2850 50  0001 L CIN
+F 3 "" H 4000 3200 50  0001 C CNN
+	1    4000 3200
 	1    0    0    -1  
 $EndComp
 $Comp
-L device:CP1_Small C8
+L ntp_7seg_clock-rescue:CP1_Small-device C8
 U 1 1 5BE90BEB
 P 8000 9850
 F 0 "C8" H 8091 9896 50  0000 L CNN
@@ -37,7 +37,7 @@ F 3 "" H 8000 9850 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L philips:PCF8563 U4
+L ntp_7seg_clock-rescue:PCF8563-philips U4
 U 1 1 5BE91480
 P 8850 9850
 F 0 "U4" H 8600 10450 50  0000 C CNN
@@ -46,17 +46,6 @@ F 2 "components:SOIC-8_3.9x7.0mm_Pitch1.27mm" H 8850 9850 50  0001 C CNN
 F 3 "http://www.nxp.com/documents/data_sheet/PCF8563.pdf" H 8850 9850 50  0001 C CNN
 	1    8850 9850
 	1    0    0    -1  
-$EndComp
-$Comp
-L device:D_Zener_Small D3
-U 1 1 5BED9A9E
-P 8850 8850
-F 0 "D3" V 8750 8700 50  0000 L CNN
-F 1 "SBD 40V 200mA" V 8900 8150 50  0000 L CNN
-F 2 "Diodes_SMD:D_0603" V 8850 8850 50  0001 C CNN
-F 3 "https://en.wikipedia.org/wiki/Zener_diode" V 8850 8850 50  0001 C CNN
-	1    8850 8850
-	0    -1   -1   0   
 $EndComp
 $Comp
 L DeeComponents:6digit_7segment_led_for_clock_3662B U3
@@ -70,7 +59,7 @@ F 3 "" H 4050 7970 50  0001 L CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Connector:Barrel_Jack J1
+L ntp_7seg_clock-rescue:Barrel_Jack-Connector J1
 U 1 1 5BE4C5C4
 P 850 1250
 F 0 "J1" H 929 1575 50  0000 C CNN
@@ -81,25 +70,25 @@ F 3 "~" H 900 1210 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L device:D_Zener_Small D1
+L Device:D_TVS D1
 U 1 1 5BE3FAE9
-P 1450 1250
-F 0 "D1" V 1404 1318 50  0000 L CNN
-F 1 "D_Zener_Small" V 1495 1318 50  0000 L CNN
-F 2 "Diodes_SMD:D_SOD-123F" V 1450 1250 50  0001 C CNN
-F 3 "https://en.wikipedia.org/wiki/Zener_diode" V 1450 1250 50  0001 C CNN
-	1    1450 1250
+P 1600 1300
+F 0 "D1" V 1554 1368 50  0000 L CNN
+F 1 "28V TVS" V 1645 1368 50  0000 L CNN
+F 2 "Diode_SMD:D_SMA" V 1600 1300 50  0001 C CNN
+F 3 "https://en.wikipedia.org/wiki/Zener_diode" V 1600 1300 50  0001 C CNN
+	1    1600 1300
 	0    1    1    0   
 $EndComp
 $Comp
-L device:Polyfuse_Small F1
+L ntp_7seg_clock-rescue:Polyfuse_Small-device F1
 U 1 1 5BE40159
-P 1950 1150
-F 0 "F1" H 2018 1196 50  0000 L CNN
-F 1 "Polyfuse_Small" H 2018 1105 50  0000 L CNN
-F 2 "Capacitors_SMD:C_1812_HandSoldering" H 2000 950 50  0001 L CNN
-F 3 "" H 1950 1150 50  0001 C CNN
-	1    1950 1150
+P 2050 1150
+F 0 "F1" H 2118 1196 50  0000 L CNN
+F 1 "1A hold" H 2118 1105 50  0000 L CNN
+F 2 "Fuse:Fuse_1812_4532Metric" H 2100 950 50  0001 L CNN
+F 3 "" H 2050 1150 50  0001 C CNN
+	1    2050 1150
 	0    -1   -1   0   
 $EndComp
 $Comp
@@ -125,317 +114,309 @@ F 3 "" H 8450 2800 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Connector:Conn_02x04_Odd_Even J2
+L ntp_7seg_clock-rescue:Conn_02x04_Odd_Even-Connector J2
 U 1 1 5BE504EA
-P 7450 4100
-F 0 "J2" H 7500 4500 50  0000 C CNN
-F 1 "Conn_02x04_Odd_Even" H 7500 4326 50  0000 C CNN
-F 2 "Pin_Headers:Pin_Header_Straight_2x04_Pitch1.27mm_SMD" H 7450 4100 50  0001 C CNN
-F 3 "~" H 7450 4100 50  0001 C CNN
-	1    7450 4100
+P 7900 5650
+F 0 "J2" H 7950 6050 50  0000 C CNN
+F 1 "Conn_02x04_Odd_Even" H 7950 5876 50  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_2x04_Pitch1.27mm_SMD" H 7900 5650 50  0001 C CNN
+F 3 "~" H 7900 5650 50  0001 C CNN
+	1    7900 5650
 	1    0    0    -1  
 $EndComp
 $Comp
-L Connector:Conn_02x04_Odd_Even J4
+L ntp_7seg_clock-rescue:Conn_02x04_Odd_Even-Connector J4
 U 1 1 5BE5258A
-P 5750 4200
-F 0 "J4" H 5800 4600 50  0000 C CNN
-F 1 "Conn_02x04_Odd_Even" H 5600 4450 50  0000 C CNN
-F 2 "Pin_Headers:Pin_Header_Straight_2x04_Pitch1.27mm_SMD" H 5750 4200 50  0001 C CNN
-F 3 "~" H 5750 4200 50  0001 C CNN
-	1    5750 4200
+P 6200 5750
+F 0 "J4" H 6250 6150 50  0000 C CNN
+F 1 "Conn_02x04_Odd_Even" H 6050 6000 50  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_2x04_Pitch1.27mm_SMD" H 6200 5750 50  0001 C CNN
+F 3 "~" H 6200 5750 50  0001 C CNN
+	1    6200 5750
 	-1   0    0    1   
 $EndComp
 $Comp
-L Connector:Conn_02x04_Odd_Even J3
+L ntp_7seg_clock-rescue:Conn_02x04_Odd_Even-Connector J3
 U 1 1 5BE52E21
-P 5750 4100
-F 0 "J3" H 5800 4417 50  0000 C CNN
-F 1 "Conn_02x04_Odd_Even" H 5800 4326 50  0000 C CNN
-F 2 "Pin_Headers:Pin_Header_Straight_2x04_Pitch1.27mm_SMD" H 5750 4100 50  0001 C CNN
-F 3 "~" H 5750 4100 50  0001 C CNN
-	1    5750 4100
+P 6200 5650
+F 0 "J3" H 6250 5967 50  0000 C CNN
+F 1 "Conn_02x04_Odd_Even" H 6250 5876 50  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_2x04_Pitch1.27mm_SMD" H 6200 5650 50  0001 C CNN
+F 3 "~" H 6200 5650 50  0001 C CNN
+	1    6200 5650
 	-1   0    0    -1  
 $EndComp
 $Comp
-L Connector:Conn_02x04_Odd_Even J5
+L ntp_7seg_clock-rescue:Conn_02x04_Odd_Even-Connector J5
 U 1 1 5BE52E2B
-P 7450 4200
-F 0 "J5" H 7500 4517 50  0000 C CNN
-F 1 "Conn_02x04_Odd_Even" H 7900 4450 50  0000 C CNN
-F 2 "Pin_Headers:Pin_Header_Straight_2x04_Pitch1.27mm_SMD" H 7450 4200 50  0001 C CNN
-F 3 "~" H 7450 4200 50  0001 C CNN
-	1    7450 4200
+P 7900 5750
+F 0 "J5" H 7950 6067 50  0000 C CNN
+F 1 "Conn_02x04_Odd_Even" H 8350 6000 50  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_2x04_Pitch1.27mm_SMD" H 7900 5750 50  0001 C CNN
+F 3 "~" H 7900 5750 50  0001 C CNN
+	1    7900 5750
 	1    0    0    1   
 $EndComp
 $Comp
-L device:L_Small L1
+L ntp_7seg_clock-rescue:L_Small-device L1
 U 1 1 5BE54B96
-P 5450 1400
-F 0 "L1" V 5635 1400 50  0000 C CNN
-F 1 "10uH" V 5544 1400 50  0000 C CNN
-F 2 "Inductors:Inductor_Wurth_HCM-7050" H 5450 1400 50  0001 C CNN
-F 3 "" H 5450 1400 50  0001 C CNN
-	1    5450 1400
+P 5150 3400
+F 0 "L1" V 5335 3400 50  0000 C CNN
+F 1 "10uH" V 5244 3400 50  0000 C CNN
+F 2 "Inductors:Inductor_Wurth_HCM-7050" H 5150 3400 50  0001 C CNN
+F 3 "" H 5150 3400 50  0001 C CNN
+	1    5150 3400
 	0    -1   -1   0   
 $EndComp
 Wire Wire Line
-	1150 1150 1450 1150
-Wire Wire Line
-	1150 1350 1200 1350
-Wire Wire Line
-	1450 1150 1850 1150
-Connection ~ 1450 1150
-Text Label 2250 1150 0    50   ~ 0
+	1150 1150 1250 1150
+Text Label 3200 1150 0    50   ~ 0
 VIN
 $Comp
 L power:GND #PWR01
 U 1 1 5BE508B2
-P 1450 1350
-F 0 "#PWR01" H 1450 1100 50  0001 C CNN
-F 1 "GND" H 1455 1177 50  0000 C CNN
-F 2 "" H 1450 1350 50  0001 C CNN
-F 3 "" H 1450 1350 50  0001 C CNN
-	1    1450 1350
+P 1600 1450
+F 0 "#PWR01" H 1600 1200 50  0001 C CNN
+F 1 "GND" H 1605 1277 50  0000 C CNN
+F 2 "" H 1600 1450 50  0001 C CNN
+F 3 "" H 1600 1450 50  0001 C CNN
+	1    1600 1450
 	1    0    0    -1  
 $EndComp
-Connection ~ 1450 1350
-Wire Wire Line
-	2050 1150 2250 1150
-Text Label 2650 850  0    50   ~ 0
+Text Label 2350 2850 0    50   ~ 0
 VIN
 $Comp
-L device:R R1
+L ntp_7seg_clock-rescue:R-device R1
 U 1 1 5BE54728
-P 3500 1400
-F 0 "R1" H 3570 1446 50  0000 L CNN
-F 1 "100k" H 3570 1355 50  0000 L CNN
-F 2 "Resistors_SMD:R_0603" V 3430 1400 50  0001 C CNN
-F 3 "" H 3500 1400 50  0001 C CNN
-	1    3500 1400
+P 3200 3400
+F 0 "R1" H 3270 3446 50  0000 L CNN
+F 1 "100k" H 3270 3355 50  0000 L CNN
+F 2 "Resistors_SMD:R_0603" V 3130 3400 50  0001 C CNN
+F 3 "" H 3200 3400 50  0001 C CNN
+	1    3200 3400
 	0    -1   1    0   
 $EndComp
 Wire Wire Line
-	3800 1400 3650 1400
-Text Label 3100 1400 0    50   ~ 0
+	3500 3400 3350 3400
+Text Label 2800 3400 0    50   ~ 0
 VIN
 Wire Wire Line
-	3100 1400 3350 1400
+	2800 3400 3050 3400
 $Comp
-L device:C_Small C3
+L ntp_7seg_clock-rescue:C_Small-device C3
 U 1 1 5BE55785
-P 3500 1200
-F 0 "C3" V 3300 1400 50  0000 L CNN
-F 1 "10u/35V" V 3400 1100 50  0000 L CNN
-F 2 "Capacitors_SMD:C_0805" H 3500 1200 50  0001 C CNN
-F 3 "" H 3500 1200 50  0001 C CNN
-	1    3500 1200
+P 3200 3200
+F 0 "C3" V 3000 3400 50  0000 L CNN
+F 1 "10u/35V" V 3100 3100 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0805" H 3200 3200 50  0001 C CNN
+F 3 "" H 3200 3200 50  0001 C CNN
+	1    3200 3200
 	1    0    0    -1  
 $EndComp
 $Comp
-L device:C_Small C2
+L ntp_7seg_clock-rescue:C_Small-device C2
 U 1 1 5BE56768
-P 3150 1200
-F 0 "C2" V 2900 1400 50  0000 L CNN
-F 1 "10u/35V" V 3000 1100 50  0000 L CNN
-F 2 "Capacitors_SMD:C_0805" H 3150 1200 50  0001 C CNN
-F 3 "" H 3150 1200 50  0001 C CNN
-	1    3150 1200
+P 2850 3200
+F 0 "C2" V 2600 3400 50  0000 L CNN
+F 1 "10u/35V" V 2700 3100 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0805" H 2850 3200 50  0001 C CNN
+F 3 "" H 2850 3200 50  0001 C CNN
+	1    2850 3200
 	1    0    0    -1  
 $EndComp
 $Comp
 L power:GND #PWR04
 U 1 1 5BE58676
-P 2850 1300
-F 0 "#PWR04" H 2850 1050 50  0001 C CNN
-F 1 "GND" H 2855 1127 50  0000 C CNN
-F 2 "" H 2850 1300 50  0001 C CNN
-F 3 "" H 2850 1300 50  0001 C CNN
-	1    2850 1300
+P 2550 3300
+F 0 "#PWR04" H 2550 3050 50  0001 C CNN
+F 1 "GND" H 2555 3127 50  0000 C CNN
+F 2 "" H 2550 3300 50  0001 C CNN
+F 3 "" H 2550 3300 50  0001 C CNN
+	1    2550 3300
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	3500 1300 3150 1300
-Connection ~ 3150 1300
+	3200 3300 2850 3300
+Connection ~ 2850 3300
 Wire Wire Line
-	3150 1300 2850 1300
+	2850 3300 2550 3300
 Wire Wire Line
-	3500 1100 3500 850 
+	3200 3100 3200 2850
 Wire Wire Line
-	2650 850  3150 850 
+	2350 2850 2850 2850
 Wire Wire Line
-	3150 1100 3150 850 
-Connection ~ 3150 850 
+	2850 3100 2850 2850
+Connection ~ 2850 2850
 Wire Wire Line
-	3150 850  3500 850 
+	2850 2850 3200 2850
 Wire Wire Line
-	3600 1000 3600 850 
+	3300 3000 3300 2850
 Wire Wire Line
-	3600 850  3500 850 
+	3300 2850 3200 2850
 Wire Wire Line
-	3600 1000 3800 1000
-Connection ~ 3500 850 
+	3300 3000 3500 3000
+Connection ~ 3200 2850
 $Comp
-L device:R R2
+L ntp_7seg_clock-rescue:R-device R2
 U 1 1 5BE5970A
-P 5650 1600
-F 0 "R2" H 5720 1646 50  0000 L CNN
-F 1 "49.9k" H 5720 1555 50  0000 L CNN
-F 2 "Resistors_SMD:R_0603" V 5580 1600 50  0001 C CNN
-F 3 "" H 5650 1600 50  0001 C CNN
-	1    5650 1600
+P 5350 3600
+F 0 "R2" H 5420 3646 50  0000 L CNN
+F 1 "49.9k" H 5420 3555 50  0000 L CNN
+F 2 "Resistors_SMD:R_0603" V 5280 3600 50  0001 C CNN
+F 3 "" H 5350 3600 50  0001 C CNN
+	1    5350 3600
 	1    0    0    1   
 $EndComp
 $Comp
-L device:R R3
+L ntp_7seg_clock-rescue:R-device R3
 U 1 1 5BE5A212
-P 5650 2000
-F 0 "R3" H 5720 2046 50  0000 L CNN
-F 1 "16k" H 5720 1955 50  0000 L CNN
-F 2 "Resistors_SMD:R_0603" V 5580 2000 50  0001 C CNN
-F 3 "" H 5650 2000 50  0001 C CNN
-	1    5650 2000
+P 5350 4000
+F 0 "R3" H 5420 4046 50  0000 L CNN
+F 1 "16k" H 5420 3955 50  0000 L CNN
+F 2 "Resistors_SMD:R_0603" V 5280 4000 50  0001 C CNN
+F 3 "" H 5350 4000 50  0001 C CNN
+	1    5350 4000
 	1    0    0    1   
 $EndComp
 $Comp
-L device:C_Small C5
+L ntp_7seg_clock-rescue:C_Small-device C5
 U 1 1 5BE5B2F9
-P 5000 1200
-F 0 "C5" V 5000 900 50  0000 L CNN
-F 1 "0.1u" V 4900 900 50  0000 L CNN
-F 2 "Capacitors_SMD:C_0603" H 5000 1200 50  0001 C CNN
-F 3 "" H 5000 1200 50  0001 C CNN
-	1    5000 1200
+P 4700 3200
+F 0 "C5" V 4700 2900 50  0000 L CNN
+F 1 "0.1u" V 4600 2900 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0603" H 4700 3200 50  0001 C CNN
+F 3 "" H 4700 3200 50  0001 C CNN
+	1    4700 3200
 	0    -1   -1   0   
 $EndComp
 Wire Wire Line
-	4800 1400 5100 1400
+	4500 3400 4800 3400
 Wire Wire Line
-	5550 1400 5650 1400
+	5250 3400 5350 3400
 Wire Wire Line
-	5650 1400 5650 1450
+	5350 3400 5350 3450
 Wire Wire Line
-	5650 1750 5650 1850
+	5350 3750 5350 3850
 Wire Wire Line
-	4900 1200 4800 1200
+	4600 3200 4500 3200
 Wire Wire Line
-	5100 1200 5100 1400
-Connection ~ 5100 1400
+	4800 3200 4800 3400
+Connection ~ 4800 3400
 Wire Wire Line
-	5100 1400 5350 1400
+	4800 3400 5050 3400
 Wire Wire Line
-	4800 1000 6000 1000
+	4500 3000 5700 3000
 Wire Wire Line
-	6000 1000 6000 1850
+	5700 3000 5700 3850
 Wire Wire Line
-	6000 1850 5650 1850
-Connection ~ 5650 1850
+	5700 3850 5350 3850
+Connection ~ 5350 3850
 $Comp
 L power:GND #PWR09
 U 1 1 5BE5E61F
-P 5650 2300
-F 0 "#PWR09" H 5650 2050 50  0001 C CNN
-F 1 "GND" H 5655 2127 50  0000 C CNN
-F 2 "" H 5650 2300 50  0001 C CNN
-F 3 "" H 5650 2300 50  0001 C CNN
-	1    5650 2300
+P 5350 4300
+F 0 "#PWR09" H 5350 4050 50  0001 C CNN
+F 1 "GND" H 5355 4127 50  0000 C CNN
+F 2 "" H 5350 4300 50  0001 C CNN
+F 3 "" H 5350 4300 50  0001 C CNN
+	1    5350 4300
 	1    0    0    -1  
 $EndComp
 $Comp
 L power:GND #PWR06
 U 1 1 5BE5EC9F
-P 4150 1600
-F 0 "#PWR06" H 4150 1350 50  0001 C CNN
-F 1 "GND" H 4155 1427 50  0000 C CNN
-F 2 "" H 4150 1600 50  0001 C CNN
-F 3 "" H 4150 1600 50  0001 C CNN
-	1    4150 1600
+P 3850 3600
+F 0 "#PWR06" H 3850 3350 50  0001 C CNN
+F 1 "GND" H 3855 3427 50  0000 C CNN
+F 2 "" H 3850 3600 50  0001 C CNN
+F 3 "" H 3850 3600 50  0001 C CNN
+	1    3850 3600
 	1    0    0    -1  
 $EndComp
 $Comp
-L device:C_Small C4
+L ntp_7seg_clock-rescue:C_Small-device C4
 U 1 1 5BE5F942
-P 3750 1600
-F 0 "C4" V 3600 1350 50  0000 L CNN
-F 1 "2.2u" V 3650 1300 50  0000 L CNN
-F 2 "Capacitors_SMD:C_0603" H 3750 1600 50  0001 C CNN
-F 3 "" H 3750 1600 50  0001 C CNN
-	1    3750 1600
+P 3450 3600
+F 0 "C4" V 3300 3350 50  0000 L CNN
+F 1 "2.2u" V 3350 3300 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0603" H 3450 3600 50  0001 C CNN
+F 3 "" H 3450 3600 50  0001 C CNN
+	1    3450 3600
 	1    0    0    -1  
 $EndComp
 $Comp
 L power:GND #PWR05
 U 1 1 5BE6161F
-P 3750 1700
-F 0 "#PWR05" H 3750 1450 50  0001 C CNN
-F 1 "GND" H 3755 1527 50  0000 C CNN
-F 2 "" H 3750 1700 50  0001 C CNN
-F 3 "" H 3750 1700 50  0001 C CNN
-	1    3750 1700
+P 3450 3700
+F 0 "#PWR05" H 3450 3450 50  0001 C CNN
+F 1 "GND" H 3455 3527 50  0000 C CNN
+F 2 "" H 3450 3700 50  0001 C CNN
+F 3 "" H 3450 3700 50  0001 C CNN
+	1    3450 3700
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	3750 1500 3750 1300
+	3450 3500 3450 3300
 Wire Wire Line
-	3750 1300 3800 1300
+	3450 3300 3500 3300
 $Comp
-L device:C_Small C7
+L ntp_7seg_clock-rescue:C_Small-device C7
 U 1 1 5BE6202F
-P 6650 1700
-F 0 "C7" V 6450 1900 50  0000 L CNN
-F 1 "10u/35V" V 6550 1600 50  0000 L CNN
-F 2 "Capacitors_SMD:C_0805" H 6650 1700 50  0001 C CNN
-F 3 "" H 6650 1700 50  0001 C CNN
-	1    6650 1700
+P 6350 3700
+F 0 "C7" V 6150 3900 50  0000 L CNN
+F 1 "10u/35V" V 6250 3600 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0805" H 6350 3700 50  0001 C CNN
+F 3 "" H 6350 3700 50  0001 C CNN
+	1    6350 3700
 	1    0    0    -1  
 $EndComp
 $Comp
-L device:C_Small C6
+L ntp_7seg_clock-rescue:C_Small-device C6
 U 1 1 5BE62039
-P 6300 1700
-F 0 "C6" V 6050 1900 50  0000 L CNN
-F 1 "10u/35V" V 6150 1600 50  0000 L CNN
-F 2 "Capacitors_SMD:C_0805" H 6300 1700 50  0001 C CNN
-F 3 "" H 6300 1700 50  0001 C CNN
-	1    6300 1700
+P 6000 3700
+F 0 "C6" V 5750 3900 50  0000 L CNN
+F 1 "10u/35V" V 5850 3600 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0805" H 6000 3700 50  0001 C CNN
+F 3 "" H 6000 3700 50  0001 C CNN
+	1    6000 3700
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	6300 1600 6300 1400
+	6000 3600 6000 3400
 Wire Wire Line
-	6300 1400 5650 1400
-Connection ~ 5650 1400
+	6000 3400 5350 3400
+Connection ~ 5350 3400
 Wire Wire Line
-	6650 1600 6650 1400
+	6350 3600 6350 3400
 Wire Wire Line
-	6650 1400 6300 1400
-Connection ~ 6300 1400
+	6350 3400 6000 3400
+Connection ~ 6000 3400
 Wire Wire Line
-	6300 1800 6300 2200
+	6000 3800 6000 4200
 Wire Wire Line
-	6300 2200 5650 2200
+	6000 4200 5350 4200
 Wire Wire Line
-	5650 2200 5650 2150
+	5350 4200 5350 4150
 Wire Wire Line
-	6650 1800 6650 2200
+	6350 3800 6350 4200
 Wire Wire Line
-	6650 2200 6300 2200
-Connection ~ 6300 2200
+	6350 4200 6000 4200
+Connection ~ 6000 4200
 Wire Wire Line
-	5650 2300 5650 2200
-Connection ~ 5650 2200
+	5350 4300 5350 4200
+Connection ~ 5350 4200
 $Comp
 L power:+3V3 #PWR012
 U 1 1 5BE65380
-P 6650 1400
-F 0 "#PWR012" H 6650 1250 50  0001 C CNN
-F 1 "+3V3" H 6665 1573 50  0000 C CNN
-F 2 "" H 6650 1400 50  0001 C CNN
-F 3 "" H 6650 1400 50  0001 C CNN
-	1    6650 1400
+P 6350 3400
+F 0 "#PWR012" H 6350 3250 50  0001 C CNN
+F 1 "+3V3" H 6365 3573 50  0000 C CNN
+F 2 "" H 6350 3400 50  0001 C CNN
+F 3 "" H 6350 3400 50  0001 C CNN
+	1    6350 3400
 	1    0    0    -1  
 $EndComp
-Connection ~ 6650 1400
+Connection ~ 6350 3400
 Text GLabel 13300 2100 1    60   Input ~ 0
 RTS
 Text GLabel 13050 2100 1    60   Input ~ 0
@@ -445,7 +426,7 @@ E_EN
 Text GLabel 13650 2200 1    60   Input ~ 0
 E_GPIO0
 $Comp
-L device:R R11
+L ntp_7seg_clock-rescue:R-device R11
 U 1 1 59DCEF75
 P 13300 2450
 F 0 "R11" V 13300 2350 50  0000 L CNN
@@ -456,7 +437,7 @@ F 3 "" H 13300 2450 50  0000 C CNN
 	1    0    0    1   
 $EndComp
 $Comp
-L device:Q_NPN_BEC Q3
+L ntp_7seg_clock-rescue:Q_NPN_BEC-device Q3
 U 1 1 59DCEF7C
 P 13550 2700
 F 0 "Q3" H 13741 2746 50  0000 L CNN
@@ -467,7 +448,7 @@ F 3 "" H 13550 2700 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L device:R R10
+L ntp_7seg_clock-rescue:R-device R10
 U 1 1 59DCEF83
 P 13050 2450
 F 0 "R10" V 13050 2350 50  0000 L CNN
@@ -478,7 +459,7 @@ F 3 "" H 13050 2450 50  0000 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L device:Q_NPN_BEC Q2
+L ntp_7seg_clock-rescue:Q_NPN_BEC-device Q2
 U 1 1 59DCEF8A
 P 12800 2700
 F 0 "Q2" H 12990 2746 50  0000 L CNN
@@ -564,7 +545,7 @@ F 3 "" H 14300 4500 50  0000 C CNN
 	-1   0    0    -1  
 $EndComp
 $Comp
-L device:C C?
+L ntp_7seg_clock-rescue:C-device C?
 U 1 1 5C23F80C
 P 12450 2300
 AR Path="/59A8E319/5C23F80C" Ref="C?"  Part="1" 
@@ -601,7 +582,7 @@ Wire Wire Line
 Text GLabel 13200 1250 0    60   Input ~ 0
 E_RX
 $Comp
-L device:R R8
+L ntp_7seg_clock-rescue:R-device R8
 U 1 1 5818B29E
 P 12300 3800
 F 0 "R8" V 12300 3750 50  0000 L CNN
@@ -643,11 +624,11 @@ Wire Wire Line
 Connection ~ 12300 4150
 Connection ~ 12300 4100
 Wire Wire Line
-	12300 4100 11550 4100
+	12300 4100 11700 4100
 Text Notes 12350 4250 0    60   ~ 0
 Longer lead side
 $Comp
-L device:R R9
+L ntp_7seg_clock-rescue:R-device R9
 U 1 1 581BE703
 P 12500 3800
 F 0 "R9" V 12500 3750 50  0000 L CNN
@@ -664,7 +645,7 @@ Wire Wire Line
 Wire Wire Line
 	12450 3650 12300 3650
 $Comp
-L device:R R7
+L ntp_7seg_clock-rescue:R-device R7
 U 1 1 594A71FB
 P 12000 4400
 F 0 "R7" V 12000 4300 50  0000 L CNN
@@ -747,7 +728,7 @@ F 3 "" H 14500 4300 50  0000 C CNN
 	1    14500 4300
 	1    0    0    -1  
 $EndComp
-Text GLabel 14100 4300 0    60   Input ~ 0
+Text GLabel 13950 4300 0    60   Input ~ 0
 E_BUTTON
 Text GLabel 8550 3200 3    60   Input ~ 0
 E_BUTTON
@@ -760,7 +741,7 @@ E_SDA
 Text GLabel 9700 9650 2    60   Input ~ 0
 E_SCL
 $Comp
-L device:R R5
+L ntp_7seg_clock-rescue:R-device R5
 U 1 1 5BFD4FFB
 P 9350 9300
 F 0 "R5" V 9350 9250 50  0000 L CNN
@@ -771,7 +752,7 @@ F 3 "" H 9350 9300 50  0000 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L device:R R6
+L ntp_7seg_clock-rescue:R-device R6
 U 1 1 5BFD84F0
 P 9550 9300
 F 0 "R6" V 9550 9250 50  0000 L CNN
@@ -796,22 +777,11 @@ Wire Wire Line
 	9700 9750 9550 9750
 Connection ~ 9550 9750
 $Comp
-L power:+3V3 #PWR015
-U 1 1 5BFE5233
-P 8850 8750
-F 0 "#PWR015" H 8850 8600 50  0001 C CNN
-F 1 "+3V3" H 8865 8923 50  0000 C CNN
-F 2 "" H 8850 8750 50  0001 C CNN
-F 3 "" H 8850 8750 50  0001 C CNN
-	1    8850 8750
-	1    0    0    -1  
-$EndComp
-$Comp
-L device:R R4
+L ntp_7seg_clock-rescue:R-device R4
 U 1 1 5BFE7589
 P 8000 9450
 F 0 "R4" V 8000 9400 50  0000 L CNN
-F 1 "10R" V 8100 9350 50  0000 L CNN
+F 1 "1k" V 8100 9350 50  0000 L CNN
 F 2 "Resistors_SMD:R_0603" V 7930 9450 50  0001 C CNN
 F 3 "" H 8000 9450 50  0000 C CNN
 	1    8000 9450
@@ -840,8 +810,6 @@ F 3 "" H 8000 9950 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	8850 8950 8850 9050
-Wire Wire Line
 	8000 9300 8000 9150
 Wire Wire Line
 	8000 9150 8850 9150
@@ -850,28 +818,6 @@ Wire Wire Line
 	8850 9150 8850 9450
 Wire Wire Line
 	8000 9600 8000 9750
-$Comp
-L power:+3V3 #PWR018
-U 1 1 5BFF22B7
-P 9350 9150
-F 0 "#PWR018" H 9350 9000 50  0001 C CNN
-F 1 "+3V3" H 9365 9323 50  0000 C CNN
-F 2 "" H 9350 9150 50  0001 C CNN
-F 3 "" H 9350 9150 50  0001 C CNN
-	1    9350 9150
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:+3V3 #PWR019
-U 1 1 5BFF4367
-P 9550 9150
-F 0 "#PWR019" H 9550 9000 50  0001 C CNN
-F 1 "+3V3" H 9565 9323 50  0000 C CNN
-F 2 "" H 9550 9150 50  0001 C CNN
-F 3 "" H 9550 9150 50  0001 C CNN
-	1    9550 9150
-	1    0    0    -1  
-$EndComp
 NoConn ~ 9250 9950
 NoConn ~ 9250 10050
 NoConn ~ 8450 10050
@@ -886,7 +832,7 @@ Text GLabel 1850 7450 0    60   Input ~ 0
 E_LED_CLK
 Text GLabel 1850 7550 0    60   Input ~ 0
 E_LED_STB
-Text GLabel 1850 7350 0    60   Input ~ 0
+Text GLabel 1400 7350 0    60   Input ~ 0
 E_LED_DIO
 $Comp
 L power:+3V3 #PWR02
@@ -934,7 +880,7 @@ Connection ~ 1650 8550
 Wire Wire Line
 	1650 8550 1650 8650
 $Comp
-L device:C_Small C1
+L ntp_7seg_clock-rescue:C_Small-device C1
 U 1 1 5C02BA7F
 P 1500 8250
 F 0 "C1" V 1500 7950 50  0000 L CNN
@@ -949,7 +895,7 @@ Wire Wire Line
 	1500 8350 1650 8350
 Connection ~ 1650 8350
 $Comp
-L device:C_Small C9
+L ntp_7seg_clock-rescue:C_Small-device C9
 U 1 1 5C033F0F
 P 9050 9150
 F 0 "C9" V 8950 9050 50  0000 L CNN
@@ -1030,7 +976,7 @@ Wire Wire Line
 Wire Wire Line
 	4550 8550 4550 8500
 $Comp
-L device:LED D2
+L ntp_7seg_clock-rescue:LED-device D2
 U 1 1 5C084A7B
 P 5550 7550
 F 0 "D2" V 5589 7433 50  0000 R CNN
@@ -1051,118 +997,113 @@ Wire Wire Line
 	5550 8550 4550 8550
 Text Notes 5700 7750 0    50   ~ 0
 STATUS
-Text Label 4950 4100 0    50   ~ 0
+Text Label 5400 5650 0    50   ~ 0
 VIN
 Wire Wire Line
-	4950 4100 5450 4100
-Text Label 4950 4000 0    50   ~ 0
+	5400 5650 5900 5650
+Text Label 5400 5550 0    50   ~ 0
 VIN
 Wire Wire Line
-	4950 4000 5450 4000
+	5400 5550 5900 5550
 $Comp
 L power:GND #PWR08
 U 1 1 5C0E6FB0
-P 5300 4300
-F 0 "#PWR08" H 5300 4050 50  0001 C CNN
-F 1 "GND" H 5305 4127 50  0000 C CNN
-F 2 "" H 5300 4300 50  0001 C CNN
-F 3 "" H 5300 4300 50  0001 C CNN
-	1    5300 4300
+P 5750 5850
+F 0 "#PWR08" H 5750 5600 50  0001 C CNN
+F 1 "GND" H 5755 5677 50  0000 C CNN
+F 2 "" H 5750 5850 50  0001 C CNN
+F 3 "" H 5750 5850 50  0001 C CNN
+	1    5750 5850
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	5450 4300 5300 4300
+	5900 5850 5750 5850
 $Comp
 L power:+3V3 #PWR010
 U 1 1 5C0F96F5
-P 5950 4000
-F 0 "#PWR010" H 5950 3850 50  0001 C CNN
-F 1 "+3V3" H 5965 4173 50  0000 C CNN
-F 2 "" H 5950 4000 50  0001 C CNN
-F 3 "" H 5950 4000 50  0001 C CNN
-	1    5950 4000
+P 6400 5550
+F 0 "#PWR010" H 6400 5400 50  0001 C CNN
+F 1 "+3V3" H 6415 5723 50  0000 C CNN
+F 2 "" H 6400 5550 50  0001 C CNN
+F 3 "" H 6400 5550 50  0001 C CNN
+	1    6400 5550
 	0    1    1    0   
 $EndComp
 $Comp
 L power:+3V3 #PWR011
 U 1 1 5C106656
-P 5950 4100
-F 0 "#PWR011" H 5950 3950 50  0001 C CNN
-F 1 "+3V3" H 5965 4273 50  0000 C CNN
-F 2 "" H 5950 4100 50  0001 C CNN
-F 3 "" H 5950 4100 50  0001 C CNN
-	1    5950 4100
+P 6400 5650
+F 0 "#PWR011" H 6400 5500 50  0001 C CNN
+F 1 "+3V3" H 6415 5823 50  0000 C CNN
+F 2 "" H 6400 5650 50  0001 C CNN
+F 3 "" H 6400 5650 50  0001 C CNN
+	1    6400 5650
 	0    1    1    0   
 $EndComp
-Text GLabel 7200 4100 0    60   Input ~ 0
+Text GLabel 7650 5650 0    60   Input ~ 0
 E_LED_CLK
-Text GLabel 7200 4200 0    60   Input ~ 0
+Text GLabel 7650 5750 0    60   Input ~ 0
 E_LED_STB
-Text GLabel 7200 4000 0    60   Input ~ 0
+Text GLabel 7650 5550 0    60   Input ~ 0
 E_LED_DIO
 $Comp
 L power:GND #PWR013
 U 1 1 5C119060
-P 7250 4300
-F 0 "#PWR013" H 7250 4050 50  0001 C CNN
-F 1 "GND" H 7255 4127 50  0000 C CNN
-F 2 "" H 7250 4300 50  0001 C CNN
-F 3 "" H 7250 4300 50  0001 C CNN
-	1    7250 4300
+P 7700 5850
+F 0 "#PWR013" H 7700 5600 50  0001 C CNN
+F 1 "GND" H 7705 5677 50  0000 C CNN
+F 2 "" H 7700 5850 50  0001 C CNN
+F 3 "" H 7700 5850 50  0001 C CNN
+	1    7700 5850
 	1    0    0    -1  
 $EndComp
-Text GLabel 6000 4200 2    60   Input ~ 0
+Text GLabel 6450 5750 2    60   Input ~ 0
 E_AIN
-Text GLabel 7800 4100 2    60   Input ~ 0
+Text GLabel 8250 5650 2    60   Input ~ 0
 E_TX
-Text GLabel 7800 4300 2    60   Input ~ 0
+Text GLabel 8250 5850 2    60   Input ~ 0
 RTS
-Text GLabel 7800 4200 2    60   Input ~ 0
+Text GLabel 8250 5750 2    60   Input ~ 0
 DTR
-Text GLabel 7800 4000 2    60   Input ~ 0
+Text GLabel 8250 5550 2    60   Input ~ 0
 E_RX
 Wire Wire Line
-	7800 4000 7750 4000
+	8250 5550 8200 5550
 Wire Wire Line
-	7800 4100 7750 4100
+	8250 5650 8200 5650
 Wire Wire Line
-	7800 4200 7750 4200
+	8250 5750 8200 5750
 Wire Wire Line
-	7800 4300 7750 4300
+	8250 5850 8200 5850
 Wire Wire Line
-	7250 4000 7200 4000
+	7700 5550 7650 5550
 Wire Wire Line
-	7250 4100 7200 4100
+	7700 5650 7650 5650
 Wire Wire Line
-	7250 4200 7200 4200
+	7700 5750 7650 5750
 Wire Wire Line
-	6000 4200 5950 4200
-Text GLabel 6000 4300 2    60   Input ~ 0
+	6450 5750 6400 5750
+Text GLabel 6450 5850 2    60   Input ~ 0
 E_BUTTON
 Wire Wire Line
-	6000 4300 5950 4300
-Connection ~ 5450 4000
-Connection ~ 5450 4100
-Connection ~ 5450 4300
-Connection ~ 5950 4000
-Connection ~ 5950 4100
-Connection ~ 5950 4200
-Connection ~ 5950 4300
-Connection ~ 7250 4000
-Connection ~ 7250 4100
-Connection ~ 7250 4200
-Connection ~ 7250 4300
-Connection ~ 7750 4000
-Connection ~ 7750 4100
-Connection ~ 7750 4200
-Connection ~ 7750 4300
+	6450 5850 6400 5850
+Connection ~ 5900 5550
+Connection ~ 5900 5650
+Connection ~ 5900 5850
+Connection ~ 6400 5550
+Connection ~ 6400 5650
+Connection ~ 6400 5750
+Connection ~ 6400 5850
+Connection ~ 7700 5550
+Connection ~ 7700 5650
+Connection ~ 7700 5750
+Connection ~ 7700 5850
+Connection ~ 8200 5550
+Connection ~ 8200 5650
+Connection ~ 8200 5750
+Connection ~ 8200 5850
 Wire Wire Line
 	1150 1250 1200 1250
-Wire Wire Line
-	1200 1250 1200 1350
-Connection ~ 1200 1350
-Wire Wire Line
-	1200 1350 1450 1350
 Wire Wire Line
 	3300 8500 4050 8500
 Wire Wire Line
@@ -1187,8 +1128,8 @@ Wire Wire Line
 	4550 9000 3300 9000
 Connection ~ 4550 8550
 Wire Wire Line
-	5450 4200 5450 4300
-Connection ~ 5450 4200
+	5900 5750 5900 5850
+Connection ~ 5900 5750
 $Comp
 L power:GND #PWR025
 U 1 1 5BE5BB6A
@@ -1251,7 +1192,7 @@ Wire Wire Line
 Wire Wire Line
 	7400 1350 7400 1200
 $Comp
-L device:C_Small C11
+L ntp_7seg_clock-rescue:C_Small-device C11
 U 1 1 5BE6B47C
 P 7400 1450
 F 0 "C11" V 7300 1350 50  0000 L CNN
@@ -1273,4 +1214,322 @@ F 3 "" H 7400 1550 50  0001 C CNN
 	1    7400 1550
 	1    0    0    -1  
 $EndComp
+$Comp
+L Connector:USB_B_Micro J7
+U 1 1 5BE63B57
+P 1200 2150
+F 0 "J7" H 1257 2617 50  0000 C CNN
+F 1 "USB_B_Micro" H 1257 2526 50  0000 C CNN
+F 2 "components:USB_Micro-B_Jing_A01SB141B1-067" H 1350 2100 50  0001 C CNN
+F 3 "~" H 1350 2100 50  0001 C CNN
+	1    1200 2150
+	1    0    0    -1  
+$EndComp
+$Comp
+L ntp_7seg_clock-rescue:C-device C?
+U 1 1 5BE6C865
+P 11700 4400
+AR Path="/59A8E319/5BE6C865" Ref="C?"  Part="1" 
+AR Path="/5BE6C865" Ref="C12"  Part="1" 
+F 0 "C12" V 11550 4200 50  0000 L CNN
+F 1 "2.2u" V 11550 4450 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 11815 4309 50  0001 L CNN
+F 3 "" H 11700 4400 50  0000 C CNN
+	1    11700 4400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	11700 4250 11700 4100
+Connection ~ 11700 4100
+Wire Wire Line
+	11700 4100 11550 4100
+$Comp
+L power:GND #PWR0102
+U 1 1 5BE89EB7
+P 11700 4550
+F 0 "#PWR0102" H 11700 4300 50  0001 C CNN
+F 1 "GND" H 11705 4377 50  0000 C CNN
+F 2 "" H 11700 4550 50  0000 C CNN
+F 3 "" H 11700 4550 50  0000 C CNN
+	1    11700 4550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1200 2550 1200 2700
+Wire Wire Line
+	1200 2700 1100 2700
+Wire Wire Line
+	850  2700 850  1550
+Wire Wire Line
+	850  1550 1200 1550
+Wire Wire Line
+	1200 1550 1200 1250
+Wire Wire Line
+	1500 1950 1500 1600
+Wire Wire Line
+	1500 1600 1250 1600
+Wire Wire Line
+	1250 1600 1250 1150
+Wire Wire Line
+	1100 2550 1100 2700
+Connection ~ 1100 2700
+Wire Wire Line
+	1100 2700 850  2700
+$Comp
+L ntp_7seg_clock-rescue:D_Zener_Small-device D4
+U 1 1 5BEBA936
+P 14050 4450
+F 0 "D4" V 14004 4518 50  0000 L CNN
+F 1 "ESD5Z3.3T1G" V 14150 4500 50  0000 L CNN
+F 2 "Diode_SMD:D_SOD-323_HandSoldering" V 14050 4450 50  0001 C CNN
+F 3 "https://en.wikipedia.org/wiki/Zener_diode" V 14050 4450 50  0001 C CNN
+	1    14050 4450
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	14050 4300 14100 4300
+Wire Wire Line
+	14050 4350 14050 4300
+Wire Wire Line
+	14050 4300 13950 4300
+Connection ~ 14050 4300
+$Comp
+L power:GND #PWR029
+U 1 1 5BEDFB53
+P 14050 4550
+F 0 "#PWR029" H 14050 4300 50  0001 C CNN
+F 1 "GND" H 14055 4377 50  0000 C CNN
+F 2 "" H 14050 4550 50  0000 C CNN
+F 3 "" H 14050 4550 50  0000 C CNN
+	1    14050 4550
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:Q_NMOS_GSD Q4
+U 1 1 5BEAF68D
+P 2850 1250
+F 0 "Q4" V 3193 1250 50  0000 C CNN
+F 1 "AO3401" V 3102 1250 50  0000 C CNN
+F 2 "Package_TO_SOT_SMD:SOT-23" H 3050 1350 50  0001 C CNN
+F 3 "~" H 2850 1250 50  0001 C CNN
+	1    2850 1250
+	0    -1   -1   0   
+$EndComp
+$Comp
+L ntp_7seg_clock-rescue:R-device R12
+U 1 1 5BED39AE
+P 2350 1550
+F 0 "R12" H 2420 1596 50  0000 L CNN
+F 1 "1M" H 2420 1505 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 2280 1550 50  0001 C CNN
+F 3 "" H 2350 1550 50  0001 C CNN
+	1    2350 1550
+	1    0    0    1   
+$EndComp
+$Comp
+L ntp_7seg_clock-rescue:R-device R13
+U 1 1 5BED414D
+P 2350 1900
+F 0 "R13" H 2420 1946 50  0000 L CNN
+F 1 "22K" H 2420 1855 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 2280 1900 50  0001 C CNN
+F 3 "" H 2350 1900 50  0001 C CNN
+	1    2350 1900
+	1    0    0    1   
+$EndComp
+Wire Wire Line
+	2350 1700 2350 1750
+Connection ~ 2650 1150
+$Comp
+L ntp_7seg_clock-rescue:D_Zener_Small-device D3
+U 1 1 5BEEF4FC
+P 2650 1500
+F 0 "D3" V 2604 1568 50  0000 L CNN
+F 1 "ESD5Z3.3T1G" V 2750 1550 50  0000 L CNN
+F 2 "Diode_SMD:D_SOD-323_HandSoldering" V 2650 1500 50  0001 C CNN
+F 3 "https://en.wikipedia.org/wiki/Zener_diode" V 2650 1500 50  0001 C CNN
+	1    2650 1500
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	2650 1600 2650 1750
+Wire Wire Line
+	2650 1750 2350 1750
+Connection ~ 2350 1750
+Wire Wire Line
+	2650 1750 2850 1750
+Wire Wire Line
+	2850 1750 2850 1450
+Connection ~ 2650 1750
+$Comp
+L power:GND #PWR030
+U 1 1 5BF0373E
+P 2350 2050
+F 0 "#PWR030" H 2350 1800 50  0001 C CNN
+F 1 "GND" H 2355 1877 50  0000 C CNN
+F 2 "" H 2350 2050 50  0001 C CNN
+F 3 "" H 2350 2050 50  0001 C CNN
+	1    2350 2050
+	1    0    0    -1  
+$EndComp
+Connection ~ 1600 1150
+Wire Wire Line
+	1600 1150 1950 1150
+Wire Wire Line
+	3200 1150 3050 1150
+Text Notes 2600 1850 0    50   ~ 0
+ESD diode abused as zener
+Wire Wire Line
+	1250 1150 1600 1150
+Connection ~ 1250 1150
+Wire Wire Line
+	2150 1150 2350 1150
+$Comp
+L power:GND #PWR031
+U 1 1 5C0CA06C
+P 7650 9000
+F 0 "#PWR031" H 7650 8750 50  0001 C CNN
+F 1 "GND" H 7655 8827 50  0000 C CNN
+F 2 "" H 7650 9000 50  0000 C CNN
+F 3 "" H 7650 9000 50  0000 C CNN
+	1    7650 9000
+	1    0    0    -1  
+$EndComp
+$Comp
+L ntp_7seg_clock-rescue:D_Zener_Small-device D5
+U 1 1 5BE9A523
+P 2650 1300
+F 0 "D5" V 2604 1368 50  0000 L CNN
+F 1 "ESD5Z3.3T1G" V 2750 1350 50  0000 L CNN
+F 2 "Diode_SMD:D_SOD-323_HandSoldering" V 2650 1300 50  0001 C CNN
+F 3 "https://en.wikipedia.org/wiki/Zener_diode" V 2650 1300 50  0001 C CNN
+	1    2650 1300
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	2650 1200 2650 1150
+Wire Wire Line
+	2350 1400 2350 1150
+Connection ~ 2350 1150
+Wire Wire Line
+	2350 1150 2650 1150
+$Comp
+L Regulator_Linear:MCP1703A-3302_SOT23 U6
+U 1 1 5BEA2D6A
+P 7650 8250
+F 0 "U6" H 7650 8492 50  0000 C CNN
+F 1 "SE8533X2-HF" H 7650 8401 50  0000 C CNN
+F 2 "Package_TO_SOT_SMD:SOT-23" H 7650 8450 50  0001 C CNN
+F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/20005122B.pdf" H 7650 8200 50  0001 C CNN
+	1    7650 8250
+	1    0    0    -1  
+$EndComp
+$Comp
+L Diode:1N4148W D6
+U 1 1 5BEAE0DE
+P 7650 8700
+F 0 "D6" V 7696 8620 50  0000 R CNN
+F 1 "1N4148W" V 7605 8620 50  0000 R CNN
+F 2 "Diode_SMD:D_SOD-323" H 7650 8525 50  0001 C CNN
+F 3 "https://www.vishay.com/docs/85748/1n4148w.pdf" H 7650 8700 50  0001 C CNN
+	1    7650 8700
+	0    -1   -1   0   
+$EndComp
+Text Label 7150 8250 0    50   ~ 0
+VIN
+Wire Wire Line
+	7350 8250 7150 8250
+$Comp
+L ntp_7seg_clock-rescue:C_Small-device C13
+U 1 1 5BEEDD3E
+P 8200 8500
+F 0 "C13" V 8000 8450 50  0000 L CNN
+F 1 "10u/35V" V 8100 8400 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric" H 8200 8500 50  0001 C CNN
+F 3 "" H 8200 8500 50  0001 C CNN
+	1    8200 8500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8200 8400 8200 8250
+Wire Wire Line
+	8200 8600 8200 8900
+Wire Wire Line
+	8200 8900 7650 8900
+Wire Wire Line
+	7650 8900 7650 8850
+Wire Wire Line
+	7650 8900 7650 9000
+Connection ~ 7650 8900
+Text Label 8350 8250 0    50   ~ 0
+3V3+
+Wire Wire Line
+	7950 8250 8200 8250
+Connection ~ 8200 8250
+Wire Wire Line
+	8200 8250 8350 8250
+Text Label 8850 8550 0    50   ~ 0
+3V3+
+$Comp
+L Diode:1N4148W D7
+U 1 1 5BF6DCC5
+P 8850 8700
+F 0 "D7" V 8896 8620 50  0000 R CNN
+F 1 "1N4148W" V 8805 8620 50  0000 R CNN
+F 2 "Diode_SMD:D_SOD-323" H 8850 8525 50  0001 C CNN
+F 3 "https://www.vishay.com/docs/85748/1n4148w.pdf" H 8850 8700 50  0001 C CNN
+	1    8850 8700
+	0    -1   -1   0   
+$EndComp
+Wire Notes Line
+	8050 8700 8750 8700
+Text Notes 8300 8700 0    50   ~ 0
+As close \nas possible
+Text Label 8850 8900 0    50   ~ 0
+3V3_RTC
+Wire Wire Line
+	9350 8950 9350 9150
+Wire Wire Line
+	9550 8950 9550 9150
+Wire Wire Line
+	8850 8850 8850 9050
+$Comp
+L power:+3V3 #PWR015
+U 1 1 5BF9A8C7
+P 9350 8950
+F 0 "#PWR015" H 9350 8800 50  0001 C CNN
+F 1 "+3V3" H 9365 9123 50  0000 C CNN
+F 2 "" H 9350 8950 50  0001 C CNN
+F 3 "" H 9350 8950 50  0001 C CNN
+	1    9350 8950
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3V3 #PWR018
+U 1 1 5BF9B209
+P 9550 8950
+F 0 "#PWR018" H 9550 8800 50  0001 C CNN
+F 1 "+3V3" H 9565 9123 50  0000 C CNN
+F 2 "" H 9550 8950 50  0001 C CNN
+F 3 "" H 9550 8950 50  0001 C CNN
+	1    9550 8950
+	1    0    0    -1  
+$EndComp
+$Comp
+L ntp_7seg_clock-rescue:R-device R14
+U 1 1 5BFA6262
+P 1650 7350
+F 0 "R14" H 1720 7396 50  0000 L CNN
+F 1 "120R" H 1720 7305 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 1580 7350 50  0001 C CNN
+F 3 "" H 1650 7350 50  0001 C CNN
+	1    1650 7350
+	0    1    -1   0   
+$EndComp
+Wire Wire Line
+	1800 7350 1850 7350
+Wire Wire Line
+	1400 7350 1500 7350
+Text Notes 8200 8150 0    50   ~ 0
+3.3V + Vf(D6)
 $EndSCHEMATC
