@@ -26,14 +26,14 @@ F 3 "" H 4000 3200 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L ntp_7seg_clock-rescue:CP1_Small-device C8
+L Device:Battery_Cell C8
 U 1 1 5BE90BEB
-P 8000 9850
-F 0 "C8" H 8091 9896 50  0000 L CNN
-F 1 "EDLC" H 8091 9805 50  0000 L CNN
-F 2 "components:BAT_6814_LAY" H 8000 9850 50  0001 C CNN
-F 3 "" H 8000 9850 50  0001 C CNN
-	1    8000 9850
+P 8000 9950
+F 0 "C8" H 8091 9996 50  0000 L CNN
+F 1 "ML621" H 8091 9905 50  0000 L CNN
+F 2 "components:BAT_MS621T_LAY" H 8000 9950 50  0001 C CNN
+F 3 "" H 8000 9950 50  0001 C CNN
+	1    8000 9950
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -170,7 +170,7 @@ F 3 "" H 5150 3400 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	1150 1150 1250 1150
-Text Label 3200 1150 0    50   ~ 0
+Text Label 3900 1150 0    50   ~ 0
 VIN
 $Comp
 L power:GND #PWR01
@@ -801,12 +801,12 @@ $EndComp
 $Comp
 L power:GND #PWR014
 U 1 1 5BFEB404
-P 8000 9950
-F 0 "#PWR014" H 8000 9700 50  0001 C CNN
-F 1 "GND" H 8005 9777 50  0000 C CNN
-F 2 "" H 8000 9950 50  0000 C CNN
-F 3 "" H 8000 9950 50  0000 C CNN
-	1    8000 9950
+P 8000 10050
+F 0 "#PWR014" H 8000 9800 50  0001 C CNN
+F 1 "GND" H 8005 9877 50  0000 C CNN
+F 2 "" H 8000 10050 50  0000 C CNN
+F 3 "" H 8000 10050 50  0000 C CNN
+	1    8000 10050
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
@@ -1313,77 +1313,62 @@ F 1 "AO3401" V 3102 1250 50  0000 C CNN
 F 2 "Package_TO_SOT_SMD:SOT-23" H 3050 1350 50  0001 C CNN
 F 3 "~" H 2850 1250 50  0001 C CNN
 	1    2850 1250
-	0    -1   -1   0   
+	0    1    -1   0   
 $EndComp
 $Comp
 L ntp_7seg_clock-rescue:R-device R12
 U 1 1 5BED39AE
-P 2350 1550
-F 0 "R12" H 2420 1596 50  0000 L CNN
-F 1 "1M" H 2420 1505 50  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 2280 1550 50  0001 C CNN
-F 3 "" H 2350 1550 50  0001 C CNN
-	1    2350 1550
+P 3150 1450
+F 0 "R12" H 3220 1496 50  0000 L CNN
+F 1 "1M" H 3220 1405 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 3080 1450 50  0001 C CNN
+F 3 "" H 3150 1450 50  0001 C CNN
+	1    3150 1450
 	1    0    0    1   
 $EndComp
 $Comp
 L ntp_7seg_clock-rescue:R-device R13
 U 1 1 5BED414D
-P 2350 1900
-F 0 "R13" H 2420 1946 50  0000 L CNN
-F 1 "22K" H 2420 1855 50  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 2280 1900 50  0001 C CNN
-F 3 "" H 2350 1900 50  0001 C CNN
-	1    2350 1900
+P 3150 1850
+F 0 "R13" H 3220 1896 50  0000 L CNN
+F 1 "22K" H 3220 1805 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 3080 1850 50  0001 C CNN
+F 3 "" H 3150 1850 50  0001 C CNN
+	1    3150 1850
 	1    0    0    1   
 $EndComp
-Wire Wire Line
-	2350 1700 2350 1750
-Connection ~ 2650 1150
 $Comp
 L ntp_7seg_clock-rescue:D_Zener_Small-device D3
 U 1 1 5BEEF4FC
-P 2650 1500
-F 0 "D3" V 2604 1568 50  0000 L CNN
-F 1 "ESD5Z3.3T1G" V 2750 1550 50  0000 L CNN
-F 2 "Diode_SMD:D_SOD-323_HandSoldering" V 2650 1500 50  0001 C CNN
-F 3 "https://en.wikipedia.org/wiki/Zener_diode" V 2650 1500 50  0001 C CNN
-	1    2650 1500
+P 3450 1400
+F 0 "D3" V 3404 1468 50  0000 L CNN
+F 1 "ESD5Z3.3T1G" V 3550 1450 50  0000 L CNN
+F 2 "Diode_SMD:D_SOD-323_HandSoldering" V 3450 1400 50  0001 C CNN
+F 3 "https://en.wikipedia.org/wiki/Zener_diode" V 3450 1400 50  0001 C CNN
+	1    3450 1400
 	0    1    1    0   
 $EndComp
-Wire Wire Line
-	2650 1600 2650 1750
-Wire Wire Line
-	2650 1750 2350 1750
-Connection ~ 2350 1750
-Wire Wire Line
-	2650 1750 2850 1750
-Wire Wire Line
-	2850 1750 2850 1450
-Connection ~ 2650 1750
 $Comp
 L power:GND #PWR030
 U 1 1 5BF0373E
-P 2350 2050
-F 0 "#PWR030" H 2350 1800 50  0001 C CNN
-F 1 "GND" H 2355 1877 50  0000 C CNN
-F 2 "" H 2350 2050 50  0001 C CNN
-F 3 "" H 2350 2050 50  0001 C CNN
-	1    2350 2050
+P 3150 2000
+F 0 "#PWR030" H 3150 1750 50  0001 C CNN
+F 1 "GND" H 3155 1827 50  0000 C CNN
+F 2 "" H 3150 2000 50  0001 C CNN
+F 3 "" H 3150 2000 50  0001 C CNN
+	1    3150 2000
 	1    0    0    -1  
 $EndComp
 Connection ~ 1600 1150
 Wire Wire Line
 	1600 1150 1950 1150
 Wire Wire Line
-	3200 1150 3050 1150
-Text Notes 2600 1850 0    50   ~ 0
+	3900 1150 3150 1150
+Text Notes 3100 2350 0    50   ~ 0
 ESD diode abused as zener
 Wire Wire Line
 	1250 1150 1600 1150
 Connection ~ 1250 1150
-Wire Wire Line
-	2150 1150 2350 1150
 $Comp
 L power:GND #PWR031
 U 1 1 5C0CA06C
@@ -1395,24 +1380,6 @@ F 3 "" H 7650 9000 50  0000 C CNN
 	1    7650 9000
 	1    0    0    -1  
 $EndComp
-$Comp
-L ntp_7seg_clock-rescue:D_Zener_Small-device D5
-U 1 1 5BE9A523
-P 2650 1300
-F 0 "D5" V 2604 1368 50  0000 L CNN
-F 1 "ESD5Z3.3T1G" V 2750 1350 50  0000 L CNN
-F 2 "Diode_SMD:D_SOD-323_HandSoldering" V 2650 1300 50  0001 C CNN
-F 3 "https://en.wikipedia.org/wiki/Zener_diode" V 2650 1300 50  0001 C CNN
-	1    2650 1300
-	0    -1   -1   0   
-$EndComp
-Wire Wire Line
-	2650 1200 2650 1150
-Wire Wire Line
-	2350 1400 2350 1150
-Connection ~ 2350 1150
-Wire Wire Line
-	2350 1150 2650 1150
 $Comp
 L Regulator_Linear:MCP1703A-3302_SOT23 U6
 U 1 1 5BEA2D6A
@@ -1532,4 +1499,25 @@ Wire Wire Line
 	1400 7350 1500 7350
 Text Notes 8200 8150 0    50   ~ 0
 3.3V + Vf(D6)
+Wire Wire Line
+	2150 1150 2650 1150
+Wire Wire Line
+	3150 1600 2850 1600
+Wire Wire Line
+	2850 1600 2850 1450
+Wire Wire Line
+	3150 1300 3150 1150
+Connection ~ 3150 1150
+Wire Wire Line
+	3150 1150 3050 1150
+Wire Wire Line
+	3450 1300 3150 1300
+Connection ~ 3150 1300
+Wire Wire Line
+	3450 1500 3450 1600
+Wire Wire Line
+	3450 1600 3150 1600
+Connection ~ 3150 1600
+Wire Wire Line
+	3150 1600 3150 1700
 $EndSCHEMATC
