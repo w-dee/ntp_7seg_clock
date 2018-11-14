@@ -1370,88 +1370,16 @@ Wire Wire Line
 	1250 1150 1600 1150
 Connection ~ 1250 1150
 $Comp
-L power:GND #PWR031
-U 1 1 5C0CA06C
-P 7650 9000
-F 0 "#PWR031" H 7650 8750 50  0001 C CNN
-F 1 "GND" H 7655 8827 50  0000 C CNN
-F 2 "" H 7650 9000 50  0000 C CNN
-F 3 "" H 7650 9000 50  0000 C CNN
-	1    7650 9000
-	1    0    0    -1  
-$EndComp
-$Comp
-L Regulator_Linear:MCP1703A-3302_SOT23 U6
-U 1 1 5BEA2D6A
-P 7650 8250
-F 0 "U6" H 7650 8492 50  0000 C CNN
-F 1 "SE8533X2-HF" H 7650 8401 50  0000 C CNN
-F 2 "Package_TO_SOT_SMD:SOT-23" H 7650 8450 50  0001 C CNN
-F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/20005122B.pdf" H 7650 8200 50  0001 C CNN
-	1    7650 8250
-	1    0    0    -1  
-$EndComp
-$Comp
-L Diode:1N4148W D6
-U 1 1 5BEAE0DE
-P 7650 8700
-F 0 "D6" V 7696 8620 50  0000 R CNN
-F 1 "1N4148W" V 7605 8620 50  0000 R CNN
-F 2 "Diode_SMD:D_SOD-323" H 7650 8525 50  0001 C CNN
-F 3 "https://www.vishay.com/docs/85748/1n4148w.pdf" H 7650 8700 50  0001 C CNN
-	1    7650 8700
-	0    -1   -1   0   
-$EndComp
-Text Label 7150 8250 0    50   ~ 0
-VIN
-Wire Wire Line
-	7350 8250 7150 8250
-$Comp
-L ntp_7seg_clock-rescue:C_Small-device C13
-U 1 1 5BEEDD3E
-P 8200 8500
-F 0 "C13" V 8000 8450 50  0000 L CNN
-F 1 "10u/35V" V 8100 8400 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0805_2012Metric" H 8200 8500 50  0001 C CNN
-F 3 "" H 8200 8500 50  0001 C CNN
-	1    8200 8500
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	8200 8400 8200 8250
-Wire Wire Line
-	8200 8600 8200 8900
-Wire Wire Line
-	8200 8900 7650 8900
-Wire Wire Line
-	7650 8900 7650 8850
-Wire Wire Line
-	7650 8900 7650 9000
-Connection ~ 7650 8900
-Text Label 8350 8250 0    50   ~ 0
-3V3+
-Wire Wire Line
-	7950 8250 8200 8250
-Connection ~ 8200 8250
-Wire Wire Line
-	8200 8250 8350 8250
-Text Label 8850 8550 0    50   ~ 0
-3V3+
-$Comp
-L Diode:1N4148W D7
+L Device:D_Schottky_Small D7
 U 1 1 5BF6DCC5
-P 8850 8700
-F 0 "D7" V 8896 8620 50  0000 R CNN
-F 1 "1N4148W" V 8805 8620 50  0000 R CNN
-F 2 "Diode_SMD:D_SOD-323" H 8850 8525 50  0001 C CNN
-F 3 "https://www.vishay.com/docs/85748/1n4148w.pdf" H 8850 8700 50  0001 C CNN
-	1    8850 8700
+P 8850 8750
+F 0 "D7" V 8896 8670 50  0000 R CNN
+F 1 "SBD" V 8805 8670 50  0000 R CNN
+F 2 "Diode_SMD:D_SOD-323" H 8850 8575 50  0001 C CNN
+F 3 "https://www.vishay.com/docs/85748/1n4148w.pdf" H 8850 8750 50  0001 C CNN
+	1    8850 8750
 	0    -1   -1   0   
 $EndComp
-Wire Notes Line
-	8050 8700 8750 8700
-Text Notes 8300 8700 0    50   ~ 0
-As close \nas possible
 Text Label 8850 8900 0    50   ~ 0
 3V3_RTC
 Wire Wire Line
@@ -1497,8 +1425,6 @@ Wire Wire Line
 	1800 7350 1850 7350
 Wire Wire Line
 	1400 7350 1500 7350
-Text Notes 8200 8150 0    50   ~ 0
-3.3V + Vf(D6)
 Wire Wire Line
 	2150 1150 2650 1150
 Wire Wire Line
@@ -1520,4 +1446,99 @@ Wire Wire Line
 Connection ~ 3150 1600
 Wire Wire Line
 	3150 1600 3150 1700
+$Comp
+L Device:Q_NMOS_GSD Q6
+U 1 1 5BEDB255
+P 8400 8500
+F 0 "Q6" V 8743 8500 50  0000 C CNN
+F 1 "AO3401" V 8652 8500 50  0000 C CNN
+F 2 "Package_TO_SOT_SMD:SOT-23" H 8600 8600 50  0001 C CNN
+F 3 "~" H 8400 8500 50  0001 C CNN
+	1    8400 8500
+	0    1    -1   0   
+$EndComp
+Wire Wire Line
+	8600 8400 8850 8400
+Wire Wire Line
+	8850 8400 8850 8650
+$Comp
+L power:+3V3 #PWR032
+U 1 1 5BEF0D30
+P 8100 8350
+F 0 "#PWR032" H 8100 8200 50  0001 C CNN
+F 1 "+3V3" H 8115 8523 50  0000 C CNN
+F 2 "" H 8100 8350 50  0001 C CNN
+F 3 "" H 8100 8350 50  0001 C CNN
+	1    8100 8350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8100 8350 8100 8400
+Wire Wire Line
+	8100 8400 8150 8400
+$Comp
+L ntp_7seg_clock-rescue:Q_NPN_BEC-device Q5
+U 1 1 5BEFBA07
+P 7600 8900
+F 0 "Q5" H 7790 8946 50  0000 L CNN
+F 1 "Q_NPN_BEC" H 7790 8855 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-23" H 7791 8809 50  0001 L CNN
+F 3 "" H 7600 8900 50  0000 C CNN
+	1    7600 8900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8400 8700 8150 8700
+$Comp
+L power:GND #PWR031
+U 1 1 5BF1BD39
+P 7700 9100
+F 0 "#PWR031" H 7700 8850 50  0001 C CNN
+F 1 "GND" H 7705 8927 50  0000 C CNN
+F 2 "" H 7700 9100 50  0000 C CNN
+F 3 "" H 7700 9100 50  0000 C CNN
+	1    7700 9100
+	1    0    0    -1  
+$EndComp
+$Comp
+L ntp_7seg_clock-rescue:R-device R15
+U 1 1 5BF270CC
+P 7250 8900
+F 0 "R15" V 7250 8850 50  0000 L CNN
+F 1 "10k" V 7350 8800 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 7180 8900 50  0001 C CNN
+F 3 "" H 7250 8900 50  0000 C CNN
+	1    7250 8900
+	0    -1   -1   0   
+$EndComp
+$Comp
+L power:+3V3 #PWR019
+U 1 1 5BF2737D
+P 6950 8900
+F 0 "#PWR019" H 6950 8750 50  0001 C CNN
+F 1 "+3V3" H 6965 9073 50  0000 C CNN
+F 2 "" H 6950 8900 50  0001 C CNN
+F 3 "" H 6950 8900 50  0001 C CNN
+	1    6950 8900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7100 8900 6950 8900
+$Comp
+L ntp_7seg_clock-rescue:R-device R16
+U 1 1 5BEC997B
+P 8150 8550
+F 0 "R16" V 8150 8500 50  0000 L CNN
+F 1 "10k" V 8250 8450 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 8080 8550 50  0001 C CNN
+F 3 "" H 8150 8550 50  0000 C CNN
+	1    8150 8550
+	1    0    0    -1  
+$EndComp
+Connection ~ 8150 8400
+Wire Wire Line
+	8150 8400 8200 8400
+Connection ~ 8150 8700
+Wire Wire Line
+	8150 8700 7700 8700
 $EndSCHEMATC
